@@ -3,9 +3,7 @@ import {
   Result,
   ValidationError,
   body,
-  check,
   param,
-  query,
   validationResult,
 } from "express-validator";
 import { StatusCodes } from "http-status-codes";
