@@ -1,6 +1,6 @@
 import { Request, Response, response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { Note } from "./notes.data";
+import { Note } from "./note.interface";
 import { getNotes, generateNewId, saveNotes } from "../helper";
 
 const { OK, CREATED, ACCEPTED, NOT_FOUND } = StatusCodes;
@@ -11,6 +11,7 @@ const create = (req: Request, res: Response) => {
 
   const newNote: Note = {
     id: newId,
+    title: req.body.title,
     content: req.body.content,
   };
   notes.push(newNote);
@@ -64,6 +65,7 @@ const update = (req: Request, res: Response) => {
   }
 
   note.content = req.body.content;
+  note.title = req.body.title;
   saveNotes(notes);
 
   return res.status(OK).json({

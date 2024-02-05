@@ -1,4 +1,4 @@
-import { Note } from "./notes/notes.data";
+import { Note } from "./notes/note.interface";
 import fs from "fs";
 
 const notesPath = `${__dirname}/notes.json`;

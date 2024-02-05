@@ -9,6 +9,14 @@ import {
 import { StatusCodes } from "http-status-codes";
 
 const validBody = [
+  body("title")
+    .notEmpty()
+    .withMessage("title should not be empty")
+    .bail()
+    .isString()
+    .withMessage("title should be of type string")
+    .bail()
+    .trim(),
   body("content")
     .notEmpty()
     .withMessage("content should not be empty")
