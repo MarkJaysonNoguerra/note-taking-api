@@ -1,3 +1,7 @@
+# Note-taking API
+
+Built using node version v20.10.0
+
 ## Project Setup
 
 ```sh
